@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-box">
+        <h1 id="title">Register</h1>
+        <form>
+          <div class="input-group">
+            <div class="input-field" id="nameField">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" placeholder="Name" />
+            </div>
+
+            <div class="input-field" id="ageField">
+              <i class="fa-solid fa-image-portrait"></i>
+              <input type="text" placeholder="Age" />
+            </div>
+
+            <div class="input-field" id="addressField">
+              <i class="fa-solid fa-location-dot"></i>
+              <input type="text" placeholder="Address" />
+            </div>
+
+            <div class="input-field" id="mobileField">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+              <input type="text" placeholder="Mobilenumber" />
+            </div>
+
+            <div class="input-field" id="userField">
+              <i class="fa-regular fa-id-badge"></i>
+              <input type="text" placeholder="Username" />
+            </div>
+
+            <div class="input-field" id="nameField">
+              <i class="fa-solid fa-at"></i>
+              <input type="text" placeholder="Email" />
+            </div>
+
+            <div class="input-field">
+              <i class="fa-solid fa-lock"></i>
+              <input type="text" placeholder="Password" />
+            </div>
+
+            <p>Forgot Password? <a href="#">Click Here!</a></p>
+          </div>
+          <div class="btn-field">
+            <button type="button" id="registerBtn">Register</button>
+            <button type="button" id="loginBtn" class="disable">Login</button>
+            <button type="button" onclick="location.href='index.html'">
+              Enter
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      let loginBtn = document.getElementById("loginBtn");
+      let registerBtn = document.getElementById("registerBtn");
+      let nameField = document.getElementById("nameField");
+      let title = document.getElementById("title");
+
+      loginBtn.onclick = function () {
+        nameField.style.maxHeight = "0";
+        title.innerHTML = "Log in";
+        registerBtn.classList.add("disable");
+        loginBtn.classList.remove("disable");
+        ageField.style.maxHeight = "0";
+        addressField.style.maxHeight = "0";
+        mobileField.style.maxHeight = "0";
+        userField.style.maxHeight = "0";
+      };
+      registerBtn.onclick = function () {
+        nameField.style.maxHeight = "60px";
+        ageField.style.maxHeight = "60px";
+        addressField.style.maxHeight = "60px";
+        mobileField.style.maxHeight = "60px";
+        userField.style.maxHeight = "60px";
+        title.innerHTML = "Register";
+        registerBtn.classList.remove("disable");
+        loginBtn.classList.add("disable");
+      };
+    </script>
+  </body>
+</html>
